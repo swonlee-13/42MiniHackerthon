@@ -2,10 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const projects = [
         {"Project": "Libft", "uri_name": "42cursus-libft", "Circle": 0},
         {"Project": "Born2beroot", "uri_name": "born2beroot", "Circle": 1},
-        {"Project": "get_next_line", "uri_name": "42cursus-get-next-line", "Circle": 1},
+        {"Project": "get_next_line", "uri_name": "42cursus-get_next_line", "Circle": 1},
         {"Project": "ft_printf", "uri_name": "42cursus-ft_printf", "Circle": 1},
-        {"Project": "FDF", "uri_name": "42cursus-fdf", "Circle": 2},
-        {"Project": "fract-ol", "uri_name": "42cursus-fract-ol", "Circle": 2},
+        {"Project": "FdF", "uri_name": "42cursus-fdf", "Circle": 2},
         {"Project": "minitalk", "uri_name": "minitalk", "Circle": 2},
         {"Project": "pipex", "uri_name": "pipex", "Circle": 2},
         {"Project": "push_swap", "uri_name": "42cursus-push_swap", "Circle": 2},
@@ -36,18 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.buttons-container .button');
 
     function getProjectPageURL(uri_name) {
-        const projectsWithCustomURL = [
-            "born2beroot", "minitalk", "pipex", "so_long", "cub3d",
-            "minirt", "cpp-module-00", "cpp-module-01", "cpp-module-02",
-            "cpp-module-03", "cpp-module-04", "inception", "webserv",
-            "ft_irc", "netpractice"
-        ];
-
-        if (projectsWithCustomURL.includes(uri_name)) {
-            return `https://projects.intra.42.fr/projects/${uri_name}`;
-        } else {
-            return `https://projects.intra.42.fr/projects/42cursus-${uri_name}`;
-        }
+        return `https://projects.intra.42.fr/projects/${uri_name}`;
     }
 
     function updateResults(circle) {
@@ -81,19 +69,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function filterResults(searchTerm) {
+        Array.from(resultsBody.querySelectorAll('tr')).forEach(row => {
+            const projectName = row.querySelector('td').textContent.toLowerCase();
+            row.style.display = projectName.includes(searchTerm) ? '' : 'none';
+        });
+    }
+
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const circle = parseInt(button.dataset.project.replace('Circle', ''));
             updateResults(circle);
+            searchBar.value = ''; // Clear search bar when filtering by circle
+            filterResults(''); // Show all results when filtering by circle
         });
     });
 
     searchBar.addEventListener('input', () => {
         const searchTerm = searchBar.value.toLowerCase();
-
-        Array.from(resultsBody.querySelectorAll('tr')).forEach(row => {
-            const projectName = row.querySelector('td').textContent.toLowerCase();
-            row.style.display = projectName.includes(searchTerm) ? '' : 'none';
-        });
+        filterResults(searchTerm);
     });
 });
