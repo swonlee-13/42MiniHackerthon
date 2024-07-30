@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42 Projects</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body class="light-mode"> <!-- You can toggle between light-mode and dark-mode for testing -->
+    <div class="container">
+        <h1>42 Projects</h1>
+        <input type="text" id="search-bar" placeholder="Search...">
+        <div class="buttons-container">
+            <button class="button" data-project="0Circle">Circle 0</button>
+            <button class="button" data-project="1Circle">Circle 1</button>
+            <button class="button" data-project="2Circle">Circle 2</button>
+            <button class="button" data-project="3Circle">Circle 3</button>
+            <button class="button" data-project="4Circle">Circle 4</button>
+            <button class="button" data-project="5Circle">Circle 5</button>
+            <button class="button" data-project="6Circle">Circle 6</button>
+        </div>
+        <div id="results-container">
+            <table id="results-table">
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>PDF</th>
+                        <th>Project Page</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body">
+                    <!-- Results will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+    --background-color-light: #f8f9fa; /* Light gray for a softer background */
+    --text-color-light: #212529; /* Dark gray for better readability */
+    --header-background-light: #343a40; /* Darker gray for the header */
+    --header-text-color-light: #ffffff; /* White for header text */
+    --cell-background-light: #ffffff; /* White for table cells */
+    --cell-text-color-light: #212529; /* Dark gray for cell text */
+    --cell-border-light: #ced4da; /* Light gray for cell borders */
+
+    --background-color-dark: #121212; /* Dark mode background */
+    --text-color-dark: #e0e0e0; /* Light gray for text in dark mode */
+    --header-background-dark: #1e1e1e; /* Slightly lighter than background for header */
+    --header-text-color-dark: #ffffff; /* White for header text */
+    --cell-background-dark: #333333; /* Dark gray for table cells */
+    --cell-text-color-dark: #e0e0e0; /* Light gray for cell text */
+    --cell-border-dark: #444444; /* Dark gray for cell borders */
+}
+
+body.light-mode {
+    --background-color: var(--background-color-light);
+    --text-color: var(--text-color-light);
+    --header-background: var(--header-background-light);
+    --header-text-color: var(--header-text-color-light);
+    --cell-background: var(--cell-background-light);
+    --cell-text-color: var(--cell-text-color-light);
+    --cell-border: var(--cell-border-light);
+}
+
+body.dark-mode {
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --header-background: var(--header-background-dark);
+    --header-text-color: var(--header-text-color-dark);
+    --cell-background: var(--cell-background-dark);
+    --cell-text-color: var(--cell-text-color-dark);
+    --cell-border: var(--cell-border-dark);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead tr {
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+}
+
+thead th {
+    padding: 12px;
+    border: 1px solid var(--cell-border);
+}
+
+tbody tr {
+    background-color: var(--cell-background);
+    color: var(--cell-text-color);
+}
+
+tbody td {
+    padding: 12px;
+    border: 1px solid var(--cell-border);
+}
+
+th, td {
+    text-align: left;
+}
+
+a {
+    color: var(--cell-text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Additional styles for buttons */
+button {
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: var(--header-text-color);
+    color: var(--header-background);
+}
+
+/* Search bar styles */
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--header-background);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
