@@ -1,0 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   font.css                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seongwol <seongwol@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 17:20:47 by fbes              #+#    #+#             */
+/*   Updated: 2024/07/30 20:48:26 by seongwol         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+/* Import Google's Material Icons */
+@font-face {
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://iintra.freekb.es/fonts/MaterialIcons-Regular.ttf);
+}
