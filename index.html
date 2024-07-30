@@ -1,85 +1,16 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>간단한 게시판</title>
-    <link rel="stylesheet" href="./css/color.css">
-    <link rel="stylesheet" href="./css/font.css">
-    <link rel="stylesheet" href="./css/scrollbar.css">
-    <style>
-    /* 추가 스타일 */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: var(--body-background-color);
-        color: var(--text-color);
-        margin: 0;
-        padding: 20px;
-    }
-
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background-color: var(--container-background-color);
-        padding: 20px;
-        border-radius: 5px;
-    }
-
-    h1 {
-        color: var(--theme-color);
-    }
-
-    .post {
-        background-color: var(--input-background-color);
-        border: 1px solid var(--general-border-color);
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 3px;
-    }
-
-    .post-title {
-        color: var(--secondary-text-color);
-        font-weight: bold;
-    }
-
-    .post-content {
-        color: var(--tertiary-text-color);
-    }
-
-    .post-meta {
-        color: var(--quaternary-text-color);
-        font-size: 0.8em;
-        margin-top: 5px;
-    }
-
-    button {
-        background-color: var(--theme-color);
-        color: var(--button-text-color);
-        border: none;
-        padding: 10px 15px;
-        border-radius: 3px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: var(--theme-color-dark);
-    }
-    </style>
+    <title>Algolia Data Upload</title>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.17.0/dist/algoliasearch-lite.umd.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>간단한 게시판</h1>
-        <div class="post">
-            <div class="post-title">첫 번째 게시물</div>
-            <div class="post-content">이것은 첫 번째 게시물의 내용입니다.</div>
-            <div class="post-meta">작성자: 홍길동 | 날짜: 2024-07-30</div>
-        </div>
-        <div class="post">
-            <div class="post-title">두 번째 게시물</div>
-            <div class="post-content">여기에 두 번째 게시물의 내용이 들어갑니다.</div>
-            <div class="post-meta">작성자: 김철수 | 날짜: 2024-07-30</div>
-        </div>
-        <button>새 게시물 작성</button>
-    </div>
+    <h1>Algolia Data Upload</h1>
+    <button id="uploadButton">Upload Data to Algolia</button>
+    <div id="result"></div>
+
+    <script type="module" src="js/upload.js"></script>
 </body>
 </html>

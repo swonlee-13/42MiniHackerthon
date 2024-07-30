@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "fuse": "^0.12.1"
+    "algoliasearch": "^4.24.0",
+    "fuse": "^0.12.1",
+    "instantsearch.js": "^4.73.3"
   }
 }
