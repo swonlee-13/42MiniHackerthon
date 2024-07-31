@@ -1,33 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
     const projects = [
-        {"Project": "Libft", "uri_name": "42cursus-libft", "Circle": 0, "Status": "incomplete"},
-        {"Project": "Born2beroot", "uri_name": "born2beroot", "Circle": 1, "Status": "incomplete"},
-        {"Project": "get_next_line", "uri_name": "42cursus-get_next_line", "Circle": 1, "Status": "incomplete"},
-        {"Project": "ft_printf", "uri_name": "42cursus-ft_printf", "Circle": 1, "Status": "incomplete"},
-        {"Project": "FdF", "uri_name": "42cursus-fdf", "Circle": 2, "Status": "incomplete"},
-        {"Project": "minitalk", "uri_name": "minitalk", "Circle": 2, "Status": "incomplete"},
-        {"Project": "pipex", "uri_name": "pipex", "Circle": 2, "Status": "incomplete"},
-        {"Project": "push_swap", "uri_name": "42cursus-push_swap", "Circle": 2, "Status": "incomplete"},
-        {"Project": "so_long", "uri_name": "so_long", "Circle": 2, "Status": "incomplete"},
-        {"Project": "minishell", "uri_name": "42cursus-minishell", "Circle": 3, "Status": "incomplete"},
-        {"Project": "Philosophers", "uri_name": "42cursus-philosophers", "Circle": 3, "Status": "incomplete"},
-        {"Project": "CPP Module 00", "uri_name": "cpp-module-00", "Circle": 4, "Status": "incomplete"},
-        {"Project": "CPP Module 01", "uri_name": "cpp-module-01", "Circle": 4, "Status": "incomplete"},
-        {"Project": "CPP Module 02", "uri_name": "cpp-module-02", "Circle": 4, "Status": "incomplete"},
-        {"Project": "CPP Module 03", "uri_name": "cpp-module-03", "Circle": 4, "Status": "incomplete"},
-        {"Project": "CPP Module 04", "uri_name": "cpp-module-04", "Circle": 4, "Status": "incomplete"},
-        {"Project": "miniRT", "uri_name": "minirt", "Circle": 4, "Status": "incomplete"},
-        {"Project": "cub3d", "uri_name": "cub3d", "Circle": 4, "Status": "incomplete"},
-        {"Project": "NetPractice", "uri_name": "netpractice", "Circle": 4, "Status": "incomplete"},
-        {"Project": "CPP Module 05", "uri_name": "cpp-module-05", "Circle": 5, "Status": "incomplete"},
-        {"Project": "CPP Module 06", "uri_name": "cpp-module-06", "Circle": 5, "Status": "incomplete"},
-        {"Project": "CPP Module 07", "uri_name": "cpp-module-07", "Circle": 5, "Status": "incomplete"},
-        {"Project": "CPP Module 08", "uri_name": "cpp-module-08", "Circle": 5, "Status": "incomplete"},
-        {"Project": "CPP Module 09", "uri_name": "cpp-module-09", "Circle": 5, "Status": "incomplete"},
-        {"Project": "Inception", "uri_name": "inception", "Circle": 5, "Status": "incomplete"},
-        {"Project": "webserv", "uri_name": "webserv", "Circle": 5, "Status": "incomplete"},
-        {"Project": "ft_irc", "uri_name": "ft_irc", "Circle": 5, "Status": "incomplete"},
-        {"Project": "ft_transcendence", "uri_name": "ft_transcendence", "Circle": 6, "Status": "incomplete"},
+        {"Project": "Libft", "uri_name": "42cursus-libft", "Circle": 0, "Status": "undefined"},
+        {"Project": "Born2beroot", "uri_name": "born2beroot", "Circle": 1, "Status": "undefined"},
+        {"Project": "get_next_line", "uri_name": "42cursus-get_next_line", "Circle": 1, "Status": "undefined"},
+        {"Project": "ft_printf", "uri_name": "42cursus-ft_printf", "Circle": 1, "Status": "undefined"},
+        {"Project": "FdF", "uri_name": "42cursus-fdf", "Circle": 2, "Status": "undefined"},
+        {"Project": "minitalk", "uri_name": "minitalk", "Circle": 2, "Status": "undefined"},
+        {"Project": "pipex", "uri_name": "pipex", "Circle": 2, "Status": "undefined"},
+        {"Project": "push_swap", "uri_name": "42cursus-push_swap", "Circle": 2, "Status": "undefined"},
+        {"Project": "so_long", "uri_name": "so_long", "Circle": 2, "Status": "undefined"},
+        {"Project": "minishell", "uri_name": "42cursus-minishell", "Circle": 3, "Status": "undefined"},
+        {"Project": "Philosophers", "uri_name": "42cursus-philosophers", "Circle": 3, "Status": "undefined"},
+        {"Project": "CPP Module 00", "uri_name": "cpp-module-00", "Circle": 4, "Status": "undefined"},
+        {"Project": "CPP Module 01", "uri_name": "cpp-module-01", "Circle": 4, "Status": "undefined"},
+        {"Project": "CPP Module 02", "uri_name": "cpp-module-02", "Circle": 4, "Status": "undefined"},
+        {"Project": "CPP Module 03", "uri_name": "cpp-module-03", "Circle": 4, "Status": "undefined"},
+        {"Project": "CPP Module 04", "uri_name": "cpp-module-04", "Circle": 4, "Status": "undefined"},
+        {"Project": "miniRT", "uri_name": "minirt", "Circle": 4, "Status": "undefined"},
+        {"Project": "cub3d", "uri_name": "cub3d", "Circle": 4, "Status": "undefined"},
+        {"Project": "NetPractice", "uri_name": "netpractice", "Circle": 4, "Status": "undefined"},
+        {"Project": "CPP Module 05", "uri_name": "cpp-module-05", "Circle": 5, "Status": "undefined"},
+        {"Project": "CPP Module 06", "uri_name": "cpp-module-06", "Circle": 5, "Status": "undefined"},
+        {"Project": "CPP Module 07", "uri_name": "cpp-module-07", "Circle": 5, "Status": "undefined"},
+        {"Project": "CPP Module 08", "uri_name": "cpp-module-08", "Circle": 5, "Status": "undefined"},
+        {"Project": "CPP Module 09", "uri_name": "cpp-module-09", "Circle": 5, "Status": "undefined"},
+        {"Project": "Inception", "uri_name": "inception", "Circle": 5, "Status": "undefined"},
+        {"Project": "webserv", "uri_name": "webserv", "Circle": 5, "Status": "undefined"},
+        {"Project": "ft_irc", "uri_name": "ft_irc", "Circle": 5, "Status": "undefined"},
+        {"Project": "ft_transcendence", "uri_name": "ft_transcendence", "Circle": 6, "Status": "undefined"},
     ];
 
     const searchBar = document.getElementById('search-bar');
@@ -102,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return '🟡'; // Yellow Circle
             case 'done':
                 return '🟢'; // Green Circle
+            case 'undefined':
+                return '⚪'; // White Circle
             default:
                 return '⚪'; // White Circle
         }
@@ -109,12 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getNextStatus(currentStatus) {
         switch (currentStatus) {
+            case 'undefined':
+                return 'incomplete';
             case 'incomplete':
                 return 'ongoing';
             case 'ongoing':
                 return 'done';
             case 'done':
-                return 'incomplete';
+                return 'undefined';
             default:
                 return 'incomplete';
         }
