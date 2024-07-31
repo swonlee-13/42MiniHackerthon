@@ -21,8 +21,8 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
-    width: 1000px;  /* max: 800px */
-    height: 600px; /* max: 600px */
+    width: 700px;  /* max: 800px */
+    height: 500px; /* max: 600px */
     margin: 0 auto; /* Center the body content */
 }
 
