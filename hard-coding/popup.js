@@ -30,18 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
         {"Project": "ft_transcendence", "uri_name": "ft_transcendence", "Circle": 6, "Status": "incomplete"},
     ];
 
-	const searchBar = document.getElementById('search-bar');
+    const searchBar = document.getElementById('search-bar');
     const resultsBody = document.getElementById('results-body');
     const buttons = document.querySelectorAll('.buttons-container .button');
+
+    let activeCircle = null;
 
     function getProjectPageURL(uri_name) {
         return `https://projects.intra.42.fr/projects/${uri_name}`;
     }
 
-    function updateResults(circle) {
+    function updateResults(filteredProjects) {
         resultsBody.innerHTML = '';
-
-        const filteredProjects = projects.filter(project => project.Circle === circle);
 
         filteredProjects.forEach(project => {
             const row = document.createElement('tr');
@@ -50,10 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const statusCell = document.createElement('td');
             const statusEmoji = document.createElement('span');
             statusEmoji.className = 'status-emoji';
-            statusEmoji.textContent = getStatusEmoji(project.status);
+            const savedStatus = localStorage.getItem(project.uri_name) || project.Status;
+            project.Status = savedStatus;
+            statusEmoji.textContent = getStatusEmoji(savedStatus);
             statusEmoji.addEventListener('click', () => {
-                project.status = getNextStatus(project.status);
-                statusEmoji.textContent = getStatusEmoji(project.status);
+                project.Status = getNextStatus(project.Status);
+                statusEmoji.textContent = getStatusEmoji(project.Status);
+                localStorage.setItem(project.uri_name, project.Status);
             });
             statusCell.appendChild(statusEmoji);
             row.appendChild(statusCell);
@@ -85,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function filterResults(searchTerm) {
-        Array.from(resultsBody.querySelectorAll('tr')).forEach(row => {
-            const projectName = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-            row.style.display = projectName.includes(searchTerm) ? '' : 'none';
-        });
+        const filteredProjects = projects.filter(project => 
+            project.Project.toLowerCase().includes(searchTerm)
+        );
+        updateResults(filteredProjects);
     }
 
     function getStatusEmoji(status) {
@@ -111,23 +114,34 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'ongoing':
                 return 'done';
             case 'done':
-                return 'undefined';
+                return 'incomplete';
             default:
                 return 'incomplete';
         }
     }
 
+    function setActiveButton(button) {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    }
+
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const circle = parseInt(button.dataset.project.replace('Circle', ''));
-            updateResults(circle);
+            activeCircle = circle;
+            const filteredProjects = projects.filter(project => project.Circle === circle);
+            updateResults(filteredProjects);
+            setActiveButton(button);
             searchBar.value = ''; // Clear search bar when filtering by circle
-            filterResults(''); // Show all results when filtering by circle
         });
     });
 
     searchBar.addEventListener('input', () => {
         const searchTerm = searchBar.value.toLowerCase();
         filterResults(searchTerm);
-	});
+        setActiveButton(null); // Clear active button highlight when searching
+    });
+
+    // Load all projects initially
+    updateResults(projects);
 });

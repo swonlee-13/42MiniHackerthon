@@ -21,7 +21,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
-    width: 800px;  /* max: 800px */
+    width: 700px;  /* max: 800px */
     height: 600px; /* max: 600px */
     margin: 0 auto; /* Center the body content */
 }
@@ -44,6 +44,15 @@ body.dark-mode {
     --cell-background: var(--cell-background-dark);
     --cell-text-color: var(--cell-text-color-dark);
     --cell-border: var(--cell-border-dark);
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 table {
@@ -124,12 +133,19 @@ a:hover {
 }
 
 /* Additional styles for buttons */
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
 button {
     background-color: var(--header-background);
     color: var(--header-text-color);
     border: none;
-    padding: 10px 20px;
-    margin: 5px;
+    padding: 10px 15px; /* Adjusted padding */
+    margin: 5px; /* Margin between buttons */
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
@@ -142,12 +158,13 @@ button:hover {
 
 /* Search bar styles */
 #search-bar {
-    width: 100%;
+    width: calc(100% - 20px); /* Full width minus padding */
     padding: 10px;
     border: 1px solid var(--header-background);
     border-radius: 4px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 16px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 /* Status emoji styles */
@@ -163,8 +180,31 @@ button:hover {
     transform: scale(1.2);
 }
 
-/* Button styles for active state */
 .button.active {
+    background-color: var(--header-text-color);
+    color: var(--header-background);
+}
+
+/* Additional styles for buttons */
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+    border: none;
+    padding: 10px 15px; /* Adjusted padding */
+    margin: 5px; /* Margin between buttons */
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
     background-color: var(--header-text-color);
     color: var(--header-background);
 }
