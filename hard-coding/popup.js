@@ -108,6 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return '🟡'; // Yellow Circle
             case 'done':
                 return '🟢'; // Green Circle
+            case 'undefined':
+                return '⚪'; // White Circle
             default:
                 return '⚪'; // White Circle
         }
@@ -115,12 +117,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getNextStatus(currentStatus) {
         switch (currentStatus) {
+            case 'undefined':
+                return 'incomplete';
             case 'incomplete':
                 return 'ongoing';
             case 'ongoing':
                 return 'done';
             case 'done':
-                return 'incomplete';
+                return 'undefined';
             default:
                 return 'incomplete';
         }
