@@ -1,22 +1,26 @@
 {
 	"manifest_version": 3,
-	"name": "42 Projects Extension",
+	"name": "42 Projects Extension Test",
 	"version": "1.0",
 	"description": "Displays a list of projects from the 42 API.",
 	"permissions": [
 	  "storage",
-	  "activeTab"
+	  "activeTab",
+	  "webNavigation"
 	],
 	"background": {
 	  "service_worker": "background.js"
 	},
+	"host_permissions": [
+	  "*://profile.intra.42.fr/*"
+	],
 	"action": {
 	  "default_popup": "hard-coding/popup.html",
 	  "default_icon": "icons/icon.png" 
 	},
 	"content_scripts": [
 	  {
-		"matches": ["<all_urls>"],
+		"matches": ["*://profile.intra.42.fr/"],
 		"js": ["content.js"]
 	  }
 	],
